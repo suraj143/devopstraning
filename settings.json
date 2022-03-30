@@ -1,0 +1,12 @@
+{
+    "rules": [
+        {
+            "destinations": [
+                {
+                    "region": "us-west-2",
+                    "registryId": "111122223333"
+                }
+            ]
+        }
+    ]
+}

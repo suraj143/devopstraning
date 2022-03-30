@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: ECR Replicate cross region
+ 
+Parameters:
+  ReplicationDestination:
+    Type: String
+    Default: us-west-2
+    Description: Enter Secondary region
+ 
+ 
+Resources:
+  MyReplicationConfig:
+    Type: AWS::ECR::ReplicationConfiguration
+    Properties:
+      ReplicationConfiguration:
+          Rules:
+            -
+              Destinations:
+                -
+                  Region: !Ref ReplicationDestination
+                  RegistryId:  !Sub "${AWS::AccountId}"
